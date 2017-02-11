@@ -75,6 +75,12 @@ class ListTests: TestCase {
         return super.defaultTestSuite()
     }
 
+    func testPrimitive() {
+        let obj = SwiftListObject()
+        obj.int.append(5)
+        XCTAssertEqual(obj.int.first!, 5)
+    }
+
     func testInvalidated() {
         guard let array = array else {
             fatalError("Test precondition failure")
